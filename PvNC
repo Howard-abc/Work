@@ -1,0 +1,14 @@
+library(ggplot2)
+
+# Read in the data and assign it to a variable
+crash_data <- read.csv("Traffic_Crashes_-_Crashes.csv")
+
+
+# Correlation between Population and NumCrashes
+cor(crash_data$Population, crash_data$NumCrashes)
+
+# Scatter Plot
+ggplot(crash_data, aes(x = Population, y = NumCrashes)) +
+  geom_point() +
+  labs(x = "Population", y = "Number of Crashes", title = "Scatter Plot of Population and Number of Crashes") # nolint: line_length_linter.
+
